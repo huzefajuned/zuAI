@@ -2,7 +2,7 @@ import React from "react";
 
 const FakeComp = () => {
   return (
-    <div className="w-full h-screen overflow-auto p-8 bg-gray-100">
+    <div className="w-full h-screen overflow-auto p-8">
       <h1 className="text-2xl font-bold mb-4">FakeComp</h1>
       <p className="mb-6 text-lg leading-8">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
