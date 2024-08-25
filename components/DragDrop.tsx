@@ -4,23 +4,37 @@ import classNames from "classnames";
 import uploadIcon from "../app/icons/uploadIcon.svg";
 import { Button } from "./ui/button";
 
+interface File {
+  name: string;
+  size: number;
+  type: string;
+  // Add other properties if necessary
+}
+
 const DragDrop = () => {
   const [isDragOver, setIsDragOver] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const handleDragOver = (e) => {
+  const handleDragOver = (e: any) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragOver(true);
   };
 
-  const handleDragLeave = (e) => {
+  const handleDragLeave = (e: {
+    preventDefault: () => void;
+    stopPropagation: () => void;
+  }) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragOver(false);
   };
 
-  const handleDrop = (e) => {
+  const handleDrop = (e: {
+    preventDefault: () => void;
+    stopPropagation: () => void;
+    dataTransfer: { files: any };
+  }) => {
     e.preventDefault();
     e.stopPropagation();
     setIsDragOver(false);
@@ -32,7 +46,7 @@ const DragDrop = () => {
     }
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e: any) => {
     const files = e.target.files;
     if (files.length > 0) {
       setSelectedFile(files[0]);
@@ -41,7 +55,14 @@ const DragDrop = () => {
   };
 
   const triggerFileInput = () => {
-    document.getElementById("fileUpload").click();
+    const fileInput = document.getElementById(
+      "fileUpload"
+    ) as HTMLInputElement | null;
+    if (fileInput) {
+      fileInput.click();
+    } else {
+      console.error("File input element not found");
+    }
   };
 
   return (
@@ -65,10 +86,10 @@ const DragDrop = () => {
         <Image src={uploadIcon} alt="Upload Icon" height={40} width={40} />
         <span className="mt-2 font-medium text-sm text-textColor">
           {selectedFile
-            ? `Selected file: ${selectedFile?.name as String}`
-            : "Drag and drop a PDF "}{" "}
+            ? `Selected file: ${selectedFile.name}`
+            : "Drag and drop a PDF"}{" "}
           <br />
-          *Limit 25 MB per file.
+          *Limit 25 MB per file.
         </span>
         <input
           type="file"

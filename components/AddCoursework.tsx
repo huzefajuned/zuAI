@@ -73,7 +73,7 @@ const AddCoursework: React.FC = () => {
       className="rounded-xl bg-[#D6DFE4] p-6 border-2 border-gray-200 flex flex-col justify-between items-center w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-full mx-auto"
     >
       <div className="w-full my-4">
-        <DragDrop onFileChange={setFile} />
+        <DragDrop />
         {errors.file && <p className="text-red-500">{errors.file}</p>}
       </div>
 
