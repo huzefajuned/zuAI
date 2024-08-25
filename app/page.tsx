@@ -4,44 +4,23 @@ import RightBar from "@/components/RightBar";
 import Sidebar from "@/components/Sidebar";
 import couseWorkIcon from "../app/icons/courseWork.svg";
 import Image from "next/image";
+import MainContents from "@/components/MainContents";
 
 export default function Home() {
   return (
-    <main className="flex  flex-row justify-between min-h-screen w-screen bg-background">
+    <main className="flex  flex-col sm:flex-row justify-between min-h-screen w-screen bg-background">
       {/* Left Sidebar */}
-      <div className="h-screen p-2">
-        <Sidebar />
-      </div>
+      {/* <div className="sm:h-screen h-10 w-screen sm:w-auto absolute sm:static  right-0 top-0 p-2 bg-fuchsia-400 sm:bg-gray-800"> */}
+      <Sidebar />
+      {/* </div> */}
 
       {/* Main Content */}
-      <div className="h-screen overflow-y-auto overflow-auto scrollbar-hide   flex flex-col w-[70%] py-10">
-        <div className="  flex flex-row  gap-5 justify-between  w-full ">
-          <div className="couserWork  flex flex-col justify-between gap-6  w-[70%]">
-            <h2 className="text-3xl gap-2">
-              Hey IB Folks ! Unsure about the quality of your answers? <br />
-              <span className="text-primary"> We get you.</span>
-            </h2>
-            <AddCoursework />
-          </div>
-          <div className="couseWorkImage  w-[30%] ">
-            <Image
-              src={couseWorkIcon}
-              alt="couseWorkIcon"
-              height={340}
-              width={340}
-            />
-          </div>
-        </div>
-        {/* rest components */}
-        <div className="mm">
-          <FakeComp />
-        </div>
-      </div>
+      <MainContents />
 
       {/* Right Sidebar */}
-      <div className=" h-screen p-2">
-        <RightBar />
-      </div>
+      {/* <div className=" h-screen p-2"> */}
+      <RightBar />
+      {/* </div> */}
     </main>
   );
 }

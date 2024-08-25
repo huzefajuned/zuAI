@@ -26,12 +26,15 @@ const navLinks: NavLink[] = [
 
 const RightBar = () => {
   return (
-    <div className="flex flex-col items-center space-y-5  w-full ">
+    <div
+      className=" hidden sm:flex flex-col items-center space-y-5  w-16 p-2  h-[98vh] m-2
+     "
+    >
       {navLinks.map((link) => (
         <a
           key={link.id}
           href={`#${link.title.toLowerCase()}`}
-          className="flex flex-row items-center  text-white hover:text-blue-500 transition duration-300 bg-white  rounded-full p-3 justify-center"
+          className="flex flex-row items-center  text-white hover:text-blue-500 transition duration-300 bg-white  rounded-full p-2 justify-center"
         >
           <Image
             src={link.icon}

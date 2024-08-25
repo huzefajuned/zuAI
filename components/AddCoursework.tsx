@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Input } from "./ui/input";
-
 import {
   Select,
   SelectContent,
@@ -21,9 +20,14 @@ interface SelectOption {
 }
 
 const AddCoursework: React.FC = () => {
-  // Define state types
+  // State to store form inputs and errors
   const [courseworkType, setCourseworkType] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
+  const [essayTitle, setEssayTitle] = useState<string>("");
+  const [file, setFile] = useState<File | null>(null);
+
+  // State for error messages
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   // Define the options for the select components
   const courseworkOptions: SelectOption[] = [
@@ -38,20 +42,49 @@ const AddCoursework: React.FC = () => {
     { value: "science", label: "Science" },
   ];
 
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+
+    if (!courseworkType)
+      newErrors.courseworkType = "Coursework type is required.";
+    if (!subject) newErrors.subject = "Subject is required.";
+    if (!essayTitle) newErrors.essayTitle = "Essay title is required.";
+
+    setErrors(newErrors);
+
+    // Check if there are no errors
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // Validate form fields
+    if (!validateForm()) return;
+
+    const formData = new FormData(event.target as HTMLFormElement);
+    console.log("Form Data:", formData);
+    // Proceed with form submission logic
+  };
+
   return (
-    <div className=" rounded-xl bg-[#D6DFE4] p-6 border-2 border-gray-200  flex flex-col justify-between items-center w-full h-full">
-      <div className="w-full my-2">
-        <DragDrop />
+    <form
+      onSubmit={onSubmit}
+      className="rounded-xl bg-[#D6DFE4] p-6 border-2 border-gray-200 flex flex-col justify-between items-center w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-full mx-auto"
+    >
+      <div className="w-full my-4">
+        <DragDrop onFileChange={setFile} />
+        {errors.file && <p className="text-red-500">{errors.file}</p>}
       </div>
 
-      <div className="flex flex-col space-y-2 w-full">
+      <div className="flex flex-col space-y-4 w-full">
         <h2 className="text-lg font-semibold text-gray-700">
           Select your course & subjects*
         </h2>
 
-        <div className="flex flex-row gap-5 py-2">
+        <div className="flex flex-col sm:flex-row gap-5 py-2 w-full">
           <Select onValueChange={(value: string) => setCourseworkType(value)}>
-            <SelectTrigger className="w-[200px]">
+            <SelectTrigger className="w-full sm:w-[200px]">
               <SelectValue placeholder="Coursework Type" />
             </SelectTrigger>
             <SelectContent>
@@ -62,9 +95,12 @@ const AddCoursework: React.FC = () => {
               ))}
             </SelectContent>
           </Select>
+          {errors.courseworkType && (
+            <p className="text-red-500">{errors.courseworkType}</p>
+          )}
 
           <Select onValueChange={(value: string) => setSubject(value)}>
-            <SelectTrigger className="w-[200px]">
+            <SelectTrigger className="w-full sm:w-[200px]">
               <SelectValue placeholder="Subject" />
             </SelectTrigger>
             <SelectContent>
@@ -75,27 +111,40 @@ const AddCoursework: React.FC = () => {
               ))}
             </SelectContent>
           </Select>
+          {errors.subject && <p className="text-red-500">{errors.subject}</p>}
         </div>
       </div>
 
-      <div className="flex flex-col space-y-2 gap-2 w-full">
+      <div className="flex flex-col space-y-2 w-full my-4">
         <h2 className="text-lg font-semibold text-gray-700">
           Enter your essay title*(Required)
         </h2>
         <Input
           type="text"
           placeholder="How nation works..."
-          className="w-[300px] rounded-full p-2 border-[#FF4800] placeholder-gray-100"
+          className="w-full sm:w-[300px] rounded-full p-2 border border-[#FF4800] placeholder-gray-500"
+          value={essayTitle}
+          onChange={(e) => setEssayTitle(e.target.value)}
         />
+        {errors.essayTitle && (
+          <p className="text-red-500">{errors.essayTitle}</p>
+        )}
       </div>
 
-      <div className="w-full my-2">
-        <Button className="flex items-center space-x-2 mt-4 md:mt-0 bg-secondary rounded-full text-white">
-          <Image src={btnIcon} alt="btnIcon" className="w-6 h-6 bg-white rounded-full " />
+      <div className="w-full my-4">
+        <Button
+          type="submit"
+          className="flex items-center space-x-2 bg-secondary rounded-full text-white py-2 px-4"
+        >
+          <Image
+            src={btnIcon}
+            alt="btnIcon"
+            className="w-6 h-6 bg-white rounded-full"
+          />
           <span>Evaluate your Score</span>
         </Button>
       </div>
-    </div>
+    </form>
   );
 };
 

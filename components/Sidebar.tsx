@@ -6,6 +6,7 @@ import dashboardIcon from "../app/icons/dashboard.svg";
 import copyIcon from "../app/icons/file_copy.svg";
 import quizIcon from "../app/icons/quiz.svg";
 import userIcon from "../app/icons/user.svg";
+import menu from "../app/icons/menu.svg";
 
 /**
  * Sidebar navLinks interface
@@ -28,16 +29,28 @@ const navLinks: NavLink[] = [
 
 const Sidebar: React.FC = () => {
   return (
-    <div
-      className="flex flex-col justify-between items-center w-14 size-full p-2  rounded-xl bg-white
-    "
-    >
+    <div className="flex flex-row sm:flex-col justify-between items-center w-full sm:w-14 size-full  rounded-none  sm:rounded-xl bg-white sm:h-[98vh] h-10 m-2">
       {/* Logo */}
-      <div className=" flex  flex-col gap-4">
-        <Image priority src={logo} alt="logo" width={60} height={60} />
+      <div className=" flex  flex-row justify-between p-2 w-full sm:flex-col gap-4">
+        <Image
+          priority
+          src={logo}
+          alt="logo"
+          width={30}
+          height={30}
+          className="h-7sm:w-full w-12"
+        />
+        <Image
+          priority
+          src={menu}
+          alt="menu"
+          width={25}
+          height={25}
+          className="flex sm:hidden"
+        />
 
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center space-y-5  w-full ">
+        <nav className="sm:flex flex-col hidden items-center space-y-5  w-full ">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -56,7 +69,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       {/* user icon */}
-      <div className="mb-8">
+      <div className="mb-8 sm:flex hidden">
         <Image priority src={userIcon} alt="userIcon" width={48} height={48} />
       </div>
     </div>
