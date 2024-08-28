@@ -1,8 +1,10 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import classNames from "classnames";
 import uploadIcon from "../app/icons/uploadIcon.svg";
 import { Button } from "./ui/button";
+import { off } from "process";
 
 interface File {
   name: string;
@@ -14,7 +16,9 @@ interface File {
 const DragDrop = () => {
   const [isDragOver, setIsDragOver] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [pdfURL, setPdfURL] = useState<null | "">(null);
 
+  console.log("pdfURL ", pdfURL);
   const handleDragOver = (e: any) => {
     e.preventDefault();
     e.stopPropagation();
@@ -47,10 +51,13 @@ const DragDrop = () => {
   };
 
   const handleFileChange = (e: any) => {
+    e.preventDefault()
     const files = e.target.files;
     if (files.length > 0) {
       setSelectedFile(files[0]);
-      console.log("Files selected:", files[0].name);
+      console.log("Files selected:", files[0]);
+
+      setPdfURL(URL.createObjectURL(files[0]) as any);
     }
   };
 
@@ -91,6 +98,7 @@ const DragDrop = () => {
           <br />
           *Limit 25 MB per file.
         </span>
+        {/* Preview uplaoded file */}
         <input
           type="file"
           id="fileUpload"

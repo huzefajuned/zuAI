@@ -1,0 +1,102 @@
+[
+  {
+    "fileInfo": "React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.",
+    "title": "Introduction to React",
+    "subTitle": "A Beginner's Guide",
+    "author": "John Doe",
+    "readTime": "15 min",
+    "wordCount": 3000,
+    "language": "English",
+    "rating": 4.5
+  },
+  {
+    "fileInfo": "JavaScript is a versatile language that is crucial for developing interactive websites. This guide covers advanced concepts like closures, prototypes, and asynchronous programming..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficientlyReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently...",
+    "title": "Advanced JavaScript",
+    "subTitle": "Mastering the Language",
+    "author": "Jane Smith",
+    "readTime": "30 min",
+    "wordCount": 4500,
+    "language": "English",
+    "rating": 4.8
+  },
+  {
+    "fileInfo": "Python is a beginner-friendly programming language known for its readability and versatility. This text guides you from the basics of Python syntax to advanced topics like object-oriented programming React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently...React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.",
+    "title": "Learning Python",
+    "subTitle": "From Basics to Advanced",
+    "author": "Alice Johnson",
+    "readTime": "20 min",
+    "wordCount": 3500,
+    "language": "English",
+    "rating": 4.7
+  },
+  {
+    "fileInfo": "Machine learning is a field of artificial intelligence that uses statistical techniques to give computer systems the ability to 'learn' from data. This book introduces core concepts and algorithms..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.",
+    "title": "Machine Learning 101",
+    "subTitle": "An Introduction",
+    "author": "Bob Brown",
+    "readTime": "40 min",
+    "wordCount": 6000,
+    "language": "English",
+    "rating": 4.6
+  },
+  {
+    "fileInfo": "Data science involves using programming, statistical analysis, and machine learning to understand and interpret data. This book explores practical applications of data science techniques..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficientlyReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently..",
+    "title": "Data Science in Practice",
+    "subTitle": "Real-World Applications",
+    "author": "Catherine Lee",
+    "readTime": "25 min",
+    "wordCount": 5000,
+    "language": "English",
+    "rating": 4.9
+  },
+  {
+    "fileInfo": "Effective communication is key to leadership. This guide provides strategies for improving communication skills in professional settings, including public speaking and writing..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can uReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.pdate and render efficiently..",
+    "title": "Effective Communication",
+    "subTitle": "Skills for Leaders",
+    "author": "Daniel Green",
+    "readTime": "18 min",
+    "wordCount": 2800,
+    "language": "English",
+    "rating": 4.4
+  },
+  {
+    "fileInfo": "Node.js is a popular platform for building scalable network applications. This text provides a comprehensive overview of building web applications using Node.js and JavaScript.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.ently...",
+    "title": "Web Development with Node.js",
+    "subTitle": "Full Stack JavaScript",
+    "author": "Emma White",
+    "readTime": "35 min",
+    "wordCount": 4800,
+    "language": "English",
+    "rating": 4.8
+  },
+  {
+    "fileInfo": "Cybersecurity involves protecting systems, networks, and programs from digital attacks. This guide covers fundamental concepts and best practices for securing digital assets..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficientlyReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.iently...",
+    "title": "The Art of Cybersecurity",
+    "subTitle": "Protecting Your Assets",
+    "author": "Franklin Harris",
+    "readTime": "22 min",
+    "wordCount": 3200,
+    "language": "English",
+    "rating": 4.3
+  },
+  {
+    "fileInfo": "Cloud computing allows for the delivery of computing services over the internet. This book offers a comprehensive overview of cloud computing models, services, and architectures.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently...React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficientReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.ly.",
+    "title": "Understanding Cloud Computing",
+    "subTitle": "A Comprehensive Overview",
+    "author": "Grace Kelly",
+    "readTime": "28 min",
+    "wordCount": 3700,
+    "language": "English",
+    "rating": 4.7
+  },
+  {
+    "fileInfo": "Artificial Intelligence is rapidly evolving, transforming industries and everyday life. This book discusses the latest trends, innovations, and the future potential of AI technologies..React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficientlyReact is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently.React is a powerful JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently...",
+    "title": "The Future of AI",
+    "subTitle": "Trends and Innovations",
+    "author": "Henry Adams",
+    "readTime": "30 min",
+    "wordCount": 5500,
+    "language": "English",
+    "rating": 4.9
+  }
+]

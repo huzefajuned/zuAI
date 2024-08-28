@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { Input } from "./ui/input";
 import {
   Select,
@@ -12,6 +12,7 @@ import btnIcon from "../app/icons/btnIcon.svg";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import DragDrop from "./DragDrop";
+import toast from "react-hot-toast";
 
 // Define a type for select options
 interface SelectOption {
@@ -26,8 +27,19 @@ const AddCoursework: React.FC = () => {
   const [essayTitle, setEssayTitle] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
 
+  console.log("file :", file);
   // State for error messages
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  // toast error
+  useEffect(() => {
+    const keys = Object.keys(errors);
+
+    if (keys[0] != undefined) {
+      console.log("keys ", keys);
+      toast.error(`${keys} are required!`);
+    }
+  }, [errors]);
 
   // Define the options for the select components
   const courseworkOptions: SelectOption[] = [
@@ -70,11 +82,10 @@ const AddCoursework: React.FC = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-xl bg-[#D6DFE4] p-6 border-2 border-gray-200 flex flex-col justify-between items-center w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-full mx-auto"
+      className="rounded-xl bg-[#FCFBFDB8] p-10 sm:p-6 border-2 border-gray-200 flex flex-col justify-between items-center w-full h-full"
     >
       <div className="w-full my-4">
         <DragDrop />
-        {errors.file && <p className="text-red-500">{errors.file}</p>}
       </div>
 
       <div className="flex flex-col space-y-4 w-full">
@@ -95,9 +106,6 @@ const AddCoursework: React.FC = () => {
               ))}
             </SelectContent>
           </Select>
-          {errors.courseworkType && (
-            <p className="text-red-500">{errors.courseworkType}</p>
-          )}
 
           <Select onValueChange={(value: string) => setSubject(value)}>
             <SelectTrigger className="w-full sm:w-[200px]">
@@ -111,7 +119,6 @@ const AddCoursework: React.FC = () => {
               ))}
             </SelectContent>
           </Select>
-          {errors.subject && <p className="text-red-500">{errors.subject}</p>}
         </div>
       </div>
 
@@ -126,9 +133,6 @@ const AddCoursework: React.FC = () => {
           value={essayTitle}
           onChange={(e) => setEssayTitle(e.target.value)}
         />
-        {errors.essayTitle && (
-          <p className="text-red-500">{errors.essayTitle}</p>
-        )}
       </div>
 
       <div className="w-full my-4">

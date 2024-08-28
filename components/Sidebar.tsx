@@ -1,3 +1,4 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import logo from "../app/icons/logo.svg";
@@ -7,6 +8,10 @@ import copyIcon from "../app/icons/file_copy.svg";
 import quizIcon from "../app/icons/quiz.svg";
 import userIcon from "../app/icons/user.svg";
 import menu from "../app/icons/menu.svg";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+const notify = () => toast('Here is your toast.');
+
 
 /**
  * Sidebar navLinks interface
@@ -28,8 +33,10 @@ const navLinks: NavLink[] = [
 ];
 
 const Sidebar: React.FC = () => {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-row sm:flex-col justify-between items-center w-full sm:w-14 size-full  rounded-none  sm:rounded-xl bg-white sm:h-[98vh] h-10 m-2">
+    <div className="flex flex-row sm:flex-col justify-between items-center w-full sm:w-14 size-full  rounded-none  sm:rounded-xl bg-white sm:h-[98vh] h-10 m-0 sm:m-2">
       {/* Logo */}
       <div className=" flex  flex-row justify-between p-2 w-full sm:flex-col gap-4">
         <Image
@@ -39,6 +46,7 @@ const Sidebar: React.FC = () => {
           width={30}
           height={30}
           className="h-7sm:w-full w-12"
+          onClick={() => router.push("/")}
         />
         <Image
           priority
@@ -70,7 +78,7 @@ const Sidebar: React.FC = () => {
 
       {/* user icon */}
       <div className="mb-8 sm:flex hidden">
-        <Image priority src={userIcon} alt="userIcon" width={48} height={48} />
+        <Image priority src={userIcon} alt="userIcon" width={48} height={48} onClick={notify} />
       </div>
     </div>
   );
